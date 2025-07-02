@@ -3,6 +3,7 @@ import DetalleProducto from "./components/pages/DetalleProducto";
 import Error404 from "./components/pages/Error404";
 import Inicio from "./components/pages/Inicio";
 import CardProducto from "./components/pages/producto/CardProducto";
+import { Route,Routes,BrowserRouter } from "react-router";
 import FormularioProducto from "./components/pages/producto/FormularioProducto";
 import Footer from "./components/shared/Footer";
 import Menu from "./components/shared/Menu";
@@ -10,15 +11,20 @@ import Menu from "./components/shared/Menu";
 function App() {
   return (
     <>
+ <BrowserRouter>
       <Menu></Menu>
       <main>
-        {/* <Error404></Error404> */}
-        {/* <Inicio></Inicio> */}
-        {/* <Administrador></Administrador> */}
-        {/* <DetalleProducto></DetalleProducto> */}
-        <FormularioProducto></FormularioProducto>
+<Routes>
+  <Route path="/" element={<Inicio></Inicio>}></Route>
+  <Route path="/detalle" element={<DetalleProducto></DetalleProducto>}></Route>
+  <Route path="/admin" element={<Administrador></Administrador>}></Route>
+  <Route path="/admin/crear" element={<FormularioProducto></FormularioProducto>}></Route>
+  <Route path="/admin/editar" element={<FormularioProducto></FormularioProducto>}></Route>
+  <Route path="*" element={<Error404></Error404>}></Route>
+</Routes>
       </main>
       <Footer></Footer>
+       </BrowserRouter>
     </>
   );
 }
