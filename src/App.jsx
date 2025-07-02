@@ -7,6 +7,7 @@ import { Route,Routes,BrowserRouter } from "react-router";
 import FormularioProducto from "./components/pages/producto/FormularioProducto";
 import Footer from "./components/shared/Footer";
 import Menu from "./components/shared/Menu";
+import Login from "./components/pages/Login";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
 <Routes>
   <Route path="/" element={<Inicio></Inicio>}></Route>
   <Route path="/detalle" element={<DetalleProducto></DetalleProducto>}></Route>
+  <Route path="/login" element={<Login></Login>} ></Route>
   <Route path="/admin" element={<Administrador></Administrador>}></Route>
   <Route path="/admin/crear" element={<FormularioProducto></FormularioProducto>}></Route>
   <Route path="/admin/editar" element={<FormularioProducto></FormularioProducto>}></Route>
